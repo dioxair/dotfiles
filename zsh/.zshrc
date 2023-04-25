@@ -17,7 +17,7 @@ autoload -U promptinit; promptinit
 autoload -U colors && colors
 export PWD=/home/$USER
 export OLDPWD=/home/$USER
-export BAT_THEME="Nord"
+export BAT_THEME="Visual Studio Dark+"
 
 export KEYTIMEOUT=1
 export ZSH=/home/$USER/.oh-my-zsh
@@ -85,6 +85,9 @@ function add-ssh-sam() {
   ssh-add ~/.ssh/id_sam
 }
 
+##############################################################
+#        Aliases! (Holy cow, there's a lot of these!)
+##############################################################
 alias nvim=/home/$USER/.local/bin/lvim
 alias DEADEND=/run/media/$USER/DEADEND/
 alias ls="exa -l"
@@ -97,10 +100,24 @@ alias cs="cargo search"
 alias crr="cargo run --release"
 alias cls="clear"
 # NixOS
-alias nxc="sudo nvim /etc/nixos/configuration.nix"
-alias nxgb="sudo nix-collect-garbage -d"
-alias nxr="sudo nixos-rebuild switch"
+alias nxc="sudo nvim /etc/nixos/configuration.nix" # Edit NixOS config
+alias nxgb="sudo nix-collect-garbage -d" # Remove old boot entries in Grub
+alias nxr="sudo nixos-rebuild switch" # Build from NixOS config
+function nxs() {
+  local cache_file=~/.cache/nix/nix-env-qaP
+
+  if [[ "$1" =~ ^--?c(ache)?$ ]]; then
+    mkdir -p $(dirname $cache_file)
+    echo -n "Caching packages.."
+    nix-env -qaP '*' >$cache_file
+    echo " 🏁"
+  else
+    grep -iE "$1" $cache_file
+  fi
+} # Search for Nix packages
 alias killalljobs="kill ${${(v)jobstates##*:*:}%=*}"
+##############################################################
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 export NVM_DIR="$HOME/.nvm"
@@ -110,6 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/$USER/.deta/bin:$PATH"
 export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH=~/.npm-packages/bin:$PATH
+export PATH="/home/samuel/.detaspace/bin:$PATH"
 export NODE_PATH=~/.npm-packages/lib/node_modules
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
