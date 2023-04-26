@@ -89,7 +89,8 @@ function add-ssh-sam() {
 #        Aliases! (Holy cow, there's a lot of these!)
 ##############################################################
 alias nvim=/home/$USER/.local/bin/lvim
-alias DEADEND=/run/media/$USER/DEADEND/
+alias goto-deadend=/run/media/$USER/DEADEND/
+alias mount-deadend="sudo mount -o user,umask=000,utf8,noauto -L DEADEND /run/media/samuel/DEADEND/"
 alias ls="exa -l"
 alias cat="bat"
 # Rust
