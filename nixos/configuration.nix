@@ -104,51 +104,57 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    xclip
-    ffmpeg_5
-    wget
+    alacritty
+    anydesk
+    appimage-run
+    ark
+    bat
+    cmake
     curl
-    firefox
-    htop
-    unzip
-    gimp
-    obs-studio
-    nodePackages.prettier
-    kdenlive
-    keepassxc
-    teeworlds
     ddnet
     discord
+    electron-mail
+    exa
+    ffmpeg_5
+    firefox
+    fuse3
+    gcc
+    gimp
+    git
+    gnumake
+    htop
     inconsolata-nerdfont
+    insomnia
+    jq
+    kdenlive
+    keepassxc
+    libreoffice
+    libreoffice
     lua
     luajit
-    vlc
     neofetch
-    translate-shell
-    zsh
-    osu-lazer
-    alacritty
-    insomnia
-    libreoffice
-    jq
-    ark
-    ungoogled-chromium
-    libreoffice
-    git
-    rbenv
-    cmake
-    ripgrep
-    gnumake
-    gcc
-    zlib
-    exa
     neovim
-    bat
-    nodenv
+    nodePackages.prettier
     nodejs
-  ];
-
+    nodenv
+    obs-studio
+    osu-lazer
+    python311
+    python39Packages.pip
+    rbenv
+    ripgrep
+    spotdl
+    teeworlds
+    translate-shell
+    ungoogled-chromium
+    unzip
+    vim
+    vlc
+    wget
+    xclip
+    zlib
+    zsh
+];
   services.flatpak.enable = true;
 
   security.sudo.configFile = ''
@@ -169,20 +175,20 @@
     Defaults:root,%wheel env_keep+=TERMINFO
    '';
 
-  environment.variables = {
-    EDITOR = "nvim";
-    PAGER = "less";
-  };
+environment.variables = {
+		EDITOR = "nvim";
+		PAGER = "less";
+	};
 
-  # font being replaced is in comment
-  fonts.fonts = with pkgs; [
-      caladea # Cambria
-      carlito # Calibri
-      hack-font
-      liberation_ttf # Times New Roman, Arial, Courier New
-      noto-fonts
-      noto-fonts-emoji
-  ];
+	# font being replaced is in comment
+	fonts.fonts = with pkgs; [
+		caladea # Cambria
+		carlito # Calibri
+		hack-font
+		liberation_ttf # Times New Roman, Arial, Courier New
+		noto-fonts
+		noto-fonts-emoji
+	];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
