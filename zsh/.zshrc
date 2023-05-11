@@ -90,7 +90,16 @@ function add-ssh-sam() {
 ##############################################################
 alias nvim=/home/$USER/.local/bin/lvim
 alias goto-deadend=/run/media/$USER/DEADEND/
-alias mount-deadend="sudo mount -o user,umask=000,utf8,noauto -L DEADEND /run/media/samuel/DEADEND/"
+function mount-deadend() {
+  # Check if mount point directory exists. If not, create it.
+  [ ! -d "/run/media" ] && sudo mkdir "/run/media" 
+  [ ! -d "/run/media/samuel" ] && sudo mkdir "/run/media/samuel" 
+  [ ! -d "/run/media/samuel/DEADEND" ] && sudo mkdir "/run/media/samuel/DEADEND/" && echo "Mount point setup!" 
+  sudo mount -o user,umask=000,utf8,noauto -L DEADEND /run/media/samuel/DEADEND/ # Actually mounts the USB.
+  if [ $? -eq 0 ]; then
+    echo "Mounted DEADEND!"
+  fi # If the mount is successfull (error code 0), display "Mounted DEADEND!" in the terminal.
+}
 alias ls="exa -l"
 alias cat="bat"
 # Rust
