@@ -1,0 +1,16 @@
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux attach || tmux"] # "If tmux session exists, this command will automatically attach to it. It will create a new session otherwise."
+
+[window]
+decorations = "Full"
+
+[colors.primary]
+background = "#141414"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" } # Apparently this also uses the bold versions of the font automatically
+size = 13 # I have terrible eyesight so I need big text on my 1080p monitor, you should probably tune this down if you have decent eyesight 
+
+[mouse]
+hide_when_typing = true

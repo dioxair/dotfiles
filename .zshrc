@@ -76,32 +76,30 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 function git-config-sam() {
   git init
   git config user.name "Samuel Olagunju"
-  git config user.email "94651716+samuelolagunju@users.noreply.github.com"
+  git config user.email "me@samola.net"
 }
 
 function add-ssh-sam() {
   eval `ssh-agent -s`
   ssh-add -D
-  ssh-add ~/.ssh/id_sam
+  ssh-add ~/.ssh/dioxair_github_ssh_key
 }
 
 ##############################################################
-#        Aliases! (Holy cow, there's a lot of these!)
+#                           Aliases!
 ##############################################################
-alias nvim=/home/$USER/.local/bin/lvim
-alias goto-deadend=/run/media/$USER/DEADEND/
-function mount-deadend() {
+alias goto-eclipse=/run/media/$USER/ECLIPSE/
+function mount-eclipse() {
   # Check if mount point directory exists. If not, create it.
   [ ! -d "/run/media" ] && sudo mkdir "/run/media" 
-  [ ! -d "/run/media/samuel" ] && sudo mkdir "/run/media/samuel" 
-  [ ! -d "/run/media/samuel/DEADEND" ] && sudo mkdir "/run/media/samuel/DEADEND/" && echo "Mount point setup!" 
-  sudo mount -o user,umask=000,utf8,noauto -L DEADEND /run/media/samuel/DEADEND/ # Actually mounts the USB.
+  [ ! -d "/run/media/$USER" ] && sudo mkdir "/run/media/$USER" 
+  [ ! -d "/run/media/$USER/ECLIPSE" ] && sudo mkdir "/run/media/$USER/ECLIPSE/" && echo "Mount point setup!" 
+  sudo mount -o user,umask=000,utf8,noauto -L ECLIPSE /run/media/$USER/ECLIPSE/ # Actually mounts the USB.
   if [ $? -eq 0 ]; then
-    echo "Mounted DEADEND!"
-  fi # If the mount is successfull (error code 0), display "Mounted DEADEND!" in the terminal.
+    echo "Mounted ECLIPSE!"
+  fi # If the mount is successfull (error code 0), display "Mounted ECLIPSE!" in the terminal.
 }
-alias ls="exa -l"
-alias cat="bat"
+
 # Rust
 alias cb="cargo build"
 alias cbr="cargo build --release"
@@ -109,23 +107,12 @@ alias cr="cargo run"
 alias cs="cargo search"
 alias crr="cargo run --release"
 alias cls="clear"
-# NixOS
-alias nxc="sudo nvim /etc/nixos/configuration.nix" # Edit NixOS config
-alias nxgb="sudo nix-collect-garbage -d" # Remove old boot entries in Grub
-alias nxr="sudo nixos-rebuild switch" # Build from NixOS config
-function nxs() {
-  local cache_file=~/.cache/nix/nix-env-qaP
-
-  if [[ "$1" =~ ^--?c(ache)?$ ]]; then
-    mkdir -p $(dirname $cache_file)
-    echo -n "Caching packages.."
-    nix-env -qaP '*' >$cache_file
-    echo " 🏁"
-  else
-    grep -iE "$1" $cache_file
-  fi
-} # Search for Nix packages
+# Misc. aliases
 alias killalljobs="kill ${${(v)jobstates##*:*:}%=*}"
+alias ls="exa -la"
+alias cat="bat"
+alias zsh-reload="source ~/.zshrc"
+alias tmux-reload="tmux source ~/.config/tmux/tmux.conf"
 ##############################################################
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
@@ -137,7 +124,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/$USER/.deta/bin:$PATH"
 export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH=~/.npm-packages/bin:$PATH
-export PATH="/home/samuel/.detaspace/bin:$PATH"
+export PATH="/home/$USER/.detaspace/bin:$PATH"
 export NODE_PATH=~/.npm-packages/lib/node_modules
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 

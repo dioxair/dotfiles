@@ -1,0 +1,21 @@
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/NvChad/NvChad.git
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".config/tmux/plugins/tmux-power"]
+	path = .config/tmux/plugins/tmux-power
+	url = https://github.com/wfxr/tmux-power.git
+[submodule ".config/tmux/plugins/tmux-sensible"]
+	path = .config/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".config/tmux/plugins/vim-tmux-navigator"]
+	path = .config/tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule ".config/tmux/plugins/tmux-themepack"]
+	path = .config/tmux/plugins/tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
