@@ -3,7 +3,6 @@
 Configuration files for my development environment (Fedora Linux)
 
 ## Requirements
-dotfiles
 Ensure you have these packages on your system for cloning and symlinking dotfiles
 
 ### Git (duh)
