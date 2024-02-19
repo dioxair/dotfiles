@@ -18,4 +18,4 @@
 	url = https://github.com/jimeh/tmux-themepack.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
+	url = git@github.com:dioxair/ohmyzsh.git
