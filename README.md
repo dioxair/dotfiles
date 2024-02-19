@@ -7,13 +7,13 @@ Ensure you have these packages on your system for cloning and symlinking dotfile
 
 ### Git (duh)
 
-```
+```bash
 sudo dnf install git
 ```
 
 ### Stow (automated symlinking)
 
-```
+```bash
 sudo dnf install stow
 ```
 
@@ -28,13 +28,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Afterwards, clone this repo to your $HOME directory and cd into the cloned repo
 
-```
+```bash
 git clone https://github.com/dioxair/dotfiles.git $HOME/dotfiles --recursive
 cd dotfiles
 ```
 
 Then, use stow to create symlinks
 
-```
+```bash
 stow .
 ```
