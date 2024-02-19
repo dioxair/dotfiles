@@ -32,7 +32,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 # NvChad
 Afterwards, clone this repo to your $HOME directory and cd into the cloned repo
 
 ```
-git clone https://github.com/dioxair/dotfiles.git $HOME/dotfiles
+git clone https://github.com/dioxair/dotfiles.git $HOME/dotfiles --recursive
 cd dotfiles
 ```
 
