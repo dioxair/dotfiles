@@ -29,7 +29,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 Afterwards, clone this repo to your $HOME directory and cd into the cloned repo
 
 ```bash
-git clone https://github.com/dioxair/dotfiles.git $HOME/dotfiles --recursive
+git clone git@github.com:dioxair/dotfiles.git $HOME/dotfiles --recursive
 cd dotfiles
 ```
 
