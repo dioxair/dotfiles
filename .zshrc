@@ -126,8 +126,8 @@ export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH=~/.npm-packages/bin:$PATH
 export PATH="/home/$USER/.detaspace/bin:$PATH"
 export NODE_PATH=~/.npm-packages/lib/node_modules
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
