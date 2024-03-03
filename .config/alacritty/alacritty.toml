@@ -3,6 +3,7 @@ program = "/bin/zsh"
 args = ["-l", "-c", "tmux attach || tmux"] # "If tmux session exists, this command will automatically attach to it. It will create a new session otherwise."
 
 [window]
+startup_mode = "Maximized"
 decorations = "Full"
 
 [colors.primary]
