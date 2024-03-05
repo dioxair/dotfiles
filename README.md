@@ -30,7 +30,7 @@ Afterwards, clone this repo to your $HOME directory and cd into the cloned repo
 
 ```bash
 git clone git@github.com:dioxair/dotfiles.git $HOME/dotfiles --recursive
-cd dotfiles
+cd ~/dotfiles
 ```
 
 Then, use stow to create symlinks
