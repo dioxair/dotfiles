@@ -3,7 +3,7 @@ TERM = "xterm-256color"
 
 [shell]
 program = "/bin/zsh"
-args = ["-l", "-c", "tmux attach || tmux"] # "If tmux session exists, this command will automatically attach to it. It will create a new session otherwise."
+args = ["-l", "-c", "tmux attach || tmux"] # "If tmux session exists, this command will automatically attach to it. It will create a new session otherwise." (From https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/)
 
 [window]
 startup_mode = "Maximized"
