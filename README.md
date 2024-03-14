@@ -22,7 +22,7 @@ sudo pacman -S stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo pacman -S alacritty neovim tmux zsh
+sudo pacman -S alacritty neovim tmux zsh eza bat
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh # Oh My Zsh
 ```
 

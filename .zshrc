@@ -109,7 +109,7 @@ alias crr="cargo run --release"
 alias cls="clear"
 # Misc. aliases
 alias killalljobs="kill ${${(v)jobstates##*:*:}%=*}"
-alias ls="exa -la"
+alias ls="eza -la"
 alias cat="bat"
 alias zsh-reload="source ~/.zshrc"
 alias tmux-reload="tmux source ~/.config/tmux/tmux.conf"
