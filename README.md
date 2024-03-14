@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for my development environment (Fedora Linux)
+Configuration files for my development environment
 
 ## Requirements
 Ensure you have these packages on your system for cloning and symlinking dotfiles
@@ -8,13 +8,13 @@ Ensure you have these packages on your system for cloning and symlinking dotfile
 ### Git (duh)
 
 ```bash
-sudo dnf install git
+sudo pacman -S git
 ```
 
 ### Stow (automated symlinking)
 
 ```bash
-sudo dnf install stow
+sudo pacman -S stow
 ```
 
 ## Installation
@@ -22,11 +22,11 @@ sudo dnf install stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo dnf install alacritty neovim tmux zsh
+sudo pacman -S alacritty neovim tmux zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh # Oh My Zsh
 ```
 
-Afterwards, clone this repo to your $HOME directory and cd into the cloned repo
+Afterwards, clone this repo to your $HOME directory and cd into the cloned repo (make sure to setup SSH first)
 
 ```bash
 git clone git@github.com:dioxair/dotfiles.git $HOME/dotfiles --recursive
