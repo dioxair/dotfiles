@@ -133,3 +133,5 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=$PATH:/home/plextora/.spicetify
+
+export PATH=$PATH:/home/samuel/.spicetify
