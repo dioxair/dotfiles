@@ -41,3 +41,4 @@ stow .
 
 ## Image credits
 [bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
+[github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
