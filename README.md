@@ -40,6 +40,4 @@ stow .
 ```
 
 ## Image credits
-[bg1.jpg](https://www.pixiv.net/en/artworks/95815717) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
-
-[bg2.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
+[bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
