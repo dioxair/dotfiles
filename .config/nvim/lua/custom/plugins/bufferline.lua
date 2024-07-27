@@ -18,6 +18,55 @@ return {
             return s
           end,
         },
+        highlights = {
+          fill = {
+            fg = "#181818",
+            bg = "#181818",
+          },
+          background = {
+            fg = "#92969c",
+            bg = "#181818",
+          },
+          tab = {
+            fg = "#181818",
+            bg = "#181818",
+          },
+          tab_selected = {
+            fg = "#181818",
+            bg = "#181818",
+          },
+          tab_separator = {
+            fg = "#181818",
+            bg = "#181818",
+          },
+          tab_separator_selected = {
+            fg = "#181818",
+            bg = "#181818",
+            sp = "#181818",
+          },
+          close_button = {
+            fg = "#181818",
+            bg = "#181818",
+          },
+          pick_selected = {
+            fg = "#FFFFFF",
+            bg = "#181818",
+            bold = true,
+            italic = true,
+          },
+          pick_visible = {
+            fg = "#FFFFFF",
+            bg = "#181818",
+            bold = true,
+            italic = true,
+          },
+          pick = {
+            fg = "#FFFFFF",
+            bg = "#181818",
+            bold = true,
+            italic = true,
+          },
+        },
       })
     end,
   },
