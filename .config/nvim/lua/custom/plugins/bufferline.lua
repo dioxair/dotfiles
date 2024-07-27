@@ -18,49 +18,6 @@ return {
             return s
           end,
         },
-
-        highlights = {
-          fill = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = "#181818",
-          },
-          background = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = "#181818",
-          },
-          buffer_visible = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = { attribute = "bg", highlight = "Normal" },
-          },
-          buffer_selected = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = { attribute = "bg", highlight = "Normal" },
-          },
-          separator = {
-            fg = { attribute = "bg", highlight = "Normal" },
-            bg = "#181818",
-          },
-          separator_selected = {
-            fg = { attribute = "fg", highlight = "Special" },
-            bg = { attribute = "bg", highlight = "Normal" },
-          },
-          separator_visible = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = "#181818",
-          },
-          close_button = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = "#181818",
-          },
-          close_button_selected = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = { attribute = "bg", highlight = "Normal" },
-          },
-          close_button_visible = {
-            fg = { attribute = "fg", highlight = "Normal" },
-            bg = { attribute = "bg", highlight = "Normal" },
-          },
-        },
       })
     end,
   },
