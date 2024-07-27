@@ -4,8 +4,11 @@
 -- See the kickstart.nvim README for more information
 return {
   -- Wakatime code time tracking
-  { 'wakatime/vim-wakatime' },
+  { "wakatime/vim-wakatime" },
 
   -- Icons
-  { 'nvim-tree/nvim-web-devicons' },
+  { "nvim-tree/nvim-web-devicons" },
+
+  -- Popup terminal
+  { "voldikss/vim-floaterm" },
 }
