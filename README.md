@@ -8,13 +8,13 @@ Ensure you have these packages on your system for cloning and symlinking dotfile
 ### Git (duh)
 
 ```bash
-sudo pacman -S git
+sudo dnf install git
 ```
 
 ### Stow (automated symlinking)
 
 ```bash
-sudo pacman -S stow
+sudo dnf install stow
 ```
 
 ## Installation
@@ -22,7 +22,7 @@ sudo pacman -S stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo pacman -S alacritty neovim tmux zsh eza bat
+sudo dnf install alacritty neovim tmux zsh eza bat
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh # Oh My Zsh
 ```
 
