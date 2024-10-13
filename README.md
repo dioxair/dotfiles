@@ -33,11 +33,13 @@ git clone git@github.com:dioxair/dotfiles.git $HOME/dotfiles --recursive
 cd ~/dotfiles
 ```
 
-Then, use stow to create symlinks
+Then, use stow to create symlinks (.zshrc is deleted to prevent stow conflicts)
 
 ```bash
-stow .
+rm ~/.zshrc && stow .
 ```
+
+> NOTE: I use JetBrainsMono Nerd Font for Alacritty. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
 
 ## Image credits
 [bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
