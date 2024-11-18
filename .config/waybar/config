@@ -72,10 +72,10 @@
     "scroll-step": 5, // %, can be a float
     "format": "vol: {volume}%  {format_source}",
     "format-bluetooth": "vol: {volume}% {format_source}",
-    "format-bluetooth-muted": "vol: {volume}% {format_source}",
+    "format-bluetooth-muted": "vol: muted {format_source}",
     "format-muted": "vol: muted {format_source}",
     "format-source": "mic vol: {volume}%",
-    "format-source-muted": "mic vol: {volume}%",
+    "format-source-muted": "mic vol: muted",
     "on-click": "pavucontrol"
   },
 }
