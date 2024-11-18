@@ -37,7 +37,7 @@ sudo pacman -S install neovim tmux zsh eza bat hyprland dunst kitty dolphin wofi
 sudo pacman -S $(pacman -Ssq noto-fons)
 yay -S ttf-jetbrains-mono-nerd
 # Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zshttf-jetbrains-mono-nerd
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh
 ```
 
 Afterwards, clone this repo to your $HOME directory and cd into the cloned repo (make sure to setup SSH first)
