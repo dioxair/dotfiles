@@ -3,18 +3,28 @@
 Configuration files for my development environment
 
 ## Requirements
-Ensure you have these packages on your system for cloning and symlinking dotfiles
+Ensure you have these packages on your system
+
+You should have a basic Hyprland environment set up first before using these dotfiles (I recommend using the Hyprland desktop option in the archinstall script)
 
 ### Git (duh)
 
 ```bash
-sudo dnf install git
+sudo pacman -S --needed base-devel git
+```
+
+### yay (AUR helper)
+```bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ~
 ```
 
 ### Stow (automated symlinking)
 
 ```bash
-sudo dnf install stow
+sudo pacman -S stow
 ```
 
 ## Installation
@@ -22,8 +32,12 @@ sudo dnf install stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo dnf install alacritty neovim tmux zsh eza bat
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh # Oh My Zsh
+sudo pacman -S install neovim tmux zsh eza bat hyprland dunst kitty dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp
+# Fonts
+sudo pacman -S $(pacman -Ssq noto-fons)
+yay -S ttf-jetbrains-mono-nerd
+# Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zshttf-jetbrains-mono-nerd
 ```
 
 Afterwards, clone this repo to your $HOME directory and cd into the cloned repo (make sure to setup SSH first)
@@ -39,7 +53,7 @@ Then, use stow to create symlinks (.zshrc is deleted to prevent stow conflicts)
 rm ~/.zshrc && stow .
 ```
 
-> NOTE: I use JetBrainsMono Nerd Font for Alacritty. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
+> **NOTE FOR NON-ARCH LINUX USERS**: I use JetBrainsMono Nerd Font for Kitty. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
 
 ## Image credits
 [bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
