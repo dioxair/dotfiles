@@ -82,7 +82,7 @@ function git-config-sam() {
 function add-ssh-sam() {
   eval `ssh-agent -s`
   ssh-add -D
-  ssh-add ~/.ssh/dioxair_github_ssh_key
+  ssh-add ~/.ssh/dioxair_github_ssh_key_pavilion
 }
 
 ##############################################################
