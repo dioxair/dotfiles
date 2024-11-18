@@ -50,7 +50,7 @@ cd ~/dotfiles
 Then, use stow to create symlinks (.zshrc is deleted to prevent stow conflicts)
 
 ```bash
-rm ~/.zshrc && stow .
+rm ~/.zshrc && stow . --adopt && git restore .
 ```
 
 > **NOTE FOR NON-ARCH LINUX USERS**: I use JetBrainsMono Nerd Font for Kitty. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
