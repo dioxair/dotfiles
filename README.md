@@ -32,7 +32,7 @@ sudo pacman -S stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo pacman -S install neovim tmux zsh eza bat hyprland dunst kitty dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp
+sudo pacman -S install neovim tmux zsh eza bat hyprland dunst kitty dolphin wofi xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp libnotify notify-osd
 # Fonts
 sudo pacman -S $(pacman -Ssq noto-fons)
 yay -S ttf-jetbrains-mono-nerd
