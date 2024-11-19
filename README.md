@@ -1,6 +1,8 @@
+![image](https://github.com/user-attachments/assets/e2595307-b774-4f97-81b0-6a42c8b658a2)
+
 # dotfiles
 
-Configuration files for my development environment
+My config files for my Linux development environment (Arch Linux and Hyprland)
 
 ## Requirements
 Ensure you have these packages on your system
