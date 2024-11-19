@@ -11,7 +11,7 @@
   "custom/media": {
     "exec": "/usr/bin/python3 $HOME/.local/bin/mediaplayer.py --player spotify",
     "return-type": "json",
-    "max-length": 40,
+    "max-length": 60,
     "on-click": "playerctl play-pause",
     "escape": "true",
   },
