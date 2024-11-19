@@ -4,10 +4,17 @@
   "height": 30, // Waybar height (to be removed for auto height)
   // "width": 1920, // Waybar width
   // Choose the order of the modules
-  "modules-left": ["tray", "hyprland/workspaces", "hyprland/mode", "custom/media", "idle_inhibitor", "pulseaudio"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["tray", "idle_inhibitor", "hyprland/workspaces", "pulseaudio"],
+  "modules-center": ["custom/media"],
   "modules-right": ["network", "battery", "backlight", "clock"],
   // Modules configuration
+  "custom/media": {
+    "exec": "/usr/bin/python3 $HOME/.local/bin/mediaplayer.py --player spotify",
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "escape": "true",
+  },
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -17,9 +24,6 @@
       "focused": "",
       "default": ""
     },
-  },
-  "hyprland/mode": {
-    "format": "<span style=\"italic\">{}</span>"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -45,7 +49,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "brightness: {percent}% ",
+    "format": "brt: {percent}%",
     "format-icons": ["", ""]
   },
   "battery": {

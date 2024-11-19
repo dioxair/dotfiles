@@ -188,11 +188,11 @@ label:focus {
 }
 
 #idle_inhibitor {
-    color: #2d3436;
+    color: #9c9c9c;
 }
 
 #idle_inhibitor.activated {
-    color: #2d3436;
+    color: #ffffff;
 }
 
 #language {
