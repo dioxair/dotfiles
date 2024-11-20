@@ -4,7 +4,7 @@
   "height": 30, // Waybar height (to be removed for auto height)
   // "width": 1920, // Waybar width
   // Choose the order of the modules
-  "modules-left": ["tray", "idle_inhibitor", "hyprland/workspaces", "pulseaudio"],
+  "modules-left": ["tray", "hyprland/workspaces", "pulseaudio"],
   "modules-center": ["custom/media"],
   "modules-right": ["network", "battery", "backlight", "clock"],
   // Modules configuration
@@ -49,8 +49,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "brt: {percent}%",
-    "format-icons": ["", ""]
+    "format": "  {percent}%"
   },
   "battery": {
     "states": {
@@ -58,28 +57,39 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "bat: {capacity}% ",
-    "format-charging": "bat (charging): {capacity}%",
-    "format-plugged": "bat (plugged) {capacity}%",
+    "format": "{icon} {capacity}%",
+    // "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}", 
     // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+    "format-full": "󰂄  {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "wifi: connected",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "wifi: disconnected",
+    "format-wifi": "  ({signalStrength}%): connected",
+    "format-ethernet": " : ({signalStrength}%): connected",
+    "format-linked": " : No IP ",
+    "format-disconnected": " : disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     "scroll-step": 5, // %, can be a float
-    "format": "vol: {volume}%  {format_source}",
-    "format-bluetooth": "vol: {volume}% {format_source}",
-    "format-bluetooth-muted": "vol: muted {format_source}",
-    "format-muted": "vol: muted {format_source}",
-    "format-source": "mic vol: {volume}%",
-    "format-source-muted": "mic vol: muted",
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": " {icon} {volume}% {format_source}",
+    "format-bluetooth-muted": " 󰝟 {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " ",
+    "format-icons": {
+    // "headphone": " ",
+    // "hands-free": "󱡏 ",
+    // "headset": "󰋎 ",
+    // "phone": " ",
+    // "portable": " ",
+    // "car": " ",
+    "default": ["", " ", " "]
+    },
     "on-click": "pavucontrol"
   },
 }
