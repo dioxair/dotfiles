@@ -36,8 +36,28 @@
     // "icon-size": 21,
     "spacing": 10
   },
+
   "clock": {
-    "format": "{:%Y-%m-%d %I:%M }"
+    "interval": 1,
+    "format": "{:%Y-%m-%d %I:%M:%S }",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click": "mode",
+    }
   },
   "temperature": {
     "thermal-zone": 2,
@@ -52,6 +72,7 @@
     "format": "  {percent}%"
   },
   "battery": {
+    "interval": 3,
     "states": {
       "good": 95,
       "warning": 30,
@@ -60,18 +81,20 @@
     "format": "{icon} {capacity}%",
     // "format-charging": "󰂄 {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}", 
+    "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     "format-full": "󰂄  {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "  ({signalStrength}%): connected",
-    "format-ethernet": " : ({signalStrength}%): connected",
-    "format-linked": " : No IP ",
-    "format-disconnected": " : disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-wifi": "{icon} ({signalStrength}%)",
+    "format-ethernet": "  ({signalStrength}%)",
+    "format-linked": "󱚵 (No IP)",
+    "format-disconnected": "󰤭 ",
+    "format-disabled": "󰤭 ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-icons": ["󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
   },
   "pulseaudio": {
     "scroll-step": 5, // %, can be a float
@@ -82,13 +105,13 @@
     "format-source": " {volume}%",
     "format-source-muted": " ",
     "format-icons": {
-    // "headphone": " ",
-    // "hands-free": "󱡏 ",
-    // "headset": "󰋎 ",
-    // "phone": " ",
-    // "portable": " ",
-    // "car": " ",
-    "default": ["", " ", " "]
+      // "headphone": " ",
+      // "hands-free": "󱡏 ",
+      // "headset": "󰋎 ",
+      // "phone": " ",
+      // "portable": " ",
+      // "car": " ",
+      "default": ["", " ", " "]
     },
     "on-click": "pavucontrol"
   },

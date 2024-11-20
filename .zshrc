@@ -16,6 +16,7 @@ fi
 autoload -U promptinit; promptinit
 autoload -U colors && colors
 export PWD=/home/$USER
+export MANPAGER='nvim +Man!'
 export OLDPWD=/home/$USER
 export BAT_THEME="Visual Studio Dark+"
 
