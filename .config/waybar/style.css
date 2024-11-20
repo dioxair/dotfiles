@@ -153,12 +153,20 @@ label:focus {
     color: #f53c3c;
 }
 
+#network.disabled {
+    color: #f53c3c;
+}
+
+#network.lined {
+    color: #f53c3c;
+}
+
 #pulseaudio {
     color: #ffffff;
 }
 
 #pulseaudio.muted {
-    color: #ffffff;
+    color: #e0674f;
 }
 
 #custom-media {
