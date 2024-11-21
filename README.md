@@ -1,4 +1,4 @@
-![2024-11-19-202904_hyprshot](https://github.com/user-attachments/assets/f0a4fda6-fbe5-405c-89fc-122bba02b44e)
+![2024-11-20-200409_hyprshot](https://github.com/user-attachments/assets/1afbffe2-c006-440b-a362-a5b8e7f84de8)
 
 # dotfiles
 
@@ -60,6 +60,7 @@ stow . --adopt && git restore .
 
 ## Image credits
 [bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
-[bg2.jpg](https://www.pixiv.net/en/artworks/118647339) and [bg3.jpg](https://www.pixiv.net/en/artworks/99144899) by [縹 京介（ALPCMAS）](https://www.pixiv.net/en/users/2351667)
 
-[github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
+[bg2.jpg](https://www.pixiv.net/en/artworks/118647339) and [bg3.jpg](https://www.pixiv.net/en/artworks/99144899) made by [縹 京介（ALPCMAS）](https://www.pixiv.net/en/users/2351667)
+
+[github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
