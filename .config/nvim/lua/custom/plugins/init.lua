@@ -11,4 +11,7 @@ return {
 
   -- Popup terminal
   { "voldikss/vim-floaterm" },
+
+  -- Discord RPC
+  { "andweeb/presence.nvim" },
 }
