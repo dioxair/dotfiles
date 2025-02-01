@@ -1,7 +1,7 @@
 {
   // "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 30, // Waybar height (to be removed for auto height)
+  "height": 35, // Waybar height (to be removed for auto height)
   // "width": 1920, // Waybar width
   // Choose the order of the modules
   "modules-left": ["tray", "hyprland/workspaces", "pulseaudio"],
@@ -76,7 +76,7 @@
     "interval": 3,
     "states": {
       "good": 95,
-      "warning": 30,
+      "warning": 45,
       "critical": 15
     },
     "format": "{icon} {capacity}%",
@@ -106,12 +106,12 @@
     "format-source": " {volume}%",
     "format-source-muted": " ",
     "format-icons": {
-      // "headphone": " ",
-      // "hands-free": "󱡏 ",
-      // "headset": "󰋎 ",
-      // "phone": " ",
-      // "portable": " ",
-      // "car": " ",
+      "headphone": " ",
+      "hands-free": "󱡏 ",
+      "headset": "󰋎 ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
       "default": ["", " ", " "]
     },
     "on-click": "pavucontrol"

@@ -1,21 +1,21 @@
 * {
-    border: none;
-    /* `ttf-font-awesome` is required to be installed for icons */
-    font-family: "Roboto Mono", Helvetica, Arial, sans-serif;
+  border: none;
+  /* `ttf-font-awesome` is required to be installed for icons */
+  font-family: "Roboto Mono", Helvetica, Arial, sans-serif;
 
-    /* adjust font-size value to your liking: */
-    font-size: 10;
+  /* adjust font-size value to your liking: */
+  font-size: 10;
 
-    min-height: 0;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.9);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
-    /* transition-property: background-color; */
-    /* transition-duration: .5s; */
-    /* border-radius: 0; */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+  color: #ffffff;
+  /* transition-property: background-color; */
+  /* transition-duration: .5s; */
+  /* border-radius: 0; */
 }
 
 /* window#waybar.hidden {
@@ -65,7 +65,7 @@ button:hover {
 
 #workspaces button.active {
   /*    box-shadow: inset 0 -2px #c9545d; */
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #ffffff;
   border-top: 2px solid #ffffff;
 }
@@ -75,7 +75,7 @@ button:hover {
 }
 
 #mode {
-  background-color: #64727D;
+  background-color: #64727d;
   border-bottom: 3px solid #ffffff;
 }
 
@@ -89,123 +89,122 @@ button:hover {
 #tray,
 #mode,
 #idle_inhibitor,
-
 #window,
 #workspaces {
-    margin: 0 6px;
+  margin: 0 6px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 #clock {
-    color: white;
+  color: white;
 }
 
 #battery {
-    color: white;
+  color: white;
 }
 
 #battery.full {
-    color: #61f547;
+  color: #61f547;
 }
 
 #battery.charging {
-    color: #FFBF00;
+  color: #ffbf00;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ff5252;
+    color: #000000;
+  }
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
-    color: #000000;
+  color: #000000;
 }
 
 #backlight {
-    color:white;
+  color: white;
 }
 
 #network {
-    color: white;
+  color: white;
 }
 
 #network.disconnected {
-    color: #f53c3c;
+  color: #f53c3c;
 }
 
 #network.disabled {
-    color: #f53c3c;
+  color: #f53c3c;
 }
 
 #network.lined {
-    color: #f53c3c;
+  color: #f53c3c;
 }
 
 #pulseaudio {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #pulseaudio.muted {
-    color: #e0674f;
+  color: #e0674f;
 }
 
 #custom-media {
-    color: #2a5c45;
-    min-width: 100px;
+  color: #2a5c45;
+  min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    color: #66cc99;
+  color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    color: #ffa000;
+  color: #ffa000;
 }
 
 #temperature {
-    color: #f0932b;
+  color: #f0932b;
 }
 
 #temperature.critical {
-    color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #tray {
-    color: #2980b9;
+  color: #2980b9;
 }
 
 #idle_inhibitor {
-    color: #9c9c9c;
+  color: #9c9c9c;
 }
 
 #idle_inhibitor.activated {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #language {
-    background: #bbccdd;
-    color: #333333;
-    padding: 0 5px;
-    margin: 6px 3px;
-    min-width: 16px;
+  background: #bbccdd;
+  color: #333333;
+  padding: 0 5px;
+  margin: 6px 3px;
+  min-width: 16px;
 }
