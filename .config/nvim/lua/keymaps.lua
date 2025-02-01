@@ -21,6 +21,12 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 vim.keymap.set("n", "<leader>t", "<cmd>FloatermToggle<CR>", { desc = "Toggle vim-floaterm" })
 
+-- I almost never want to yank text that I'm deleting, so this fixes that
+vim.keymap.set("n", "d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set("n", "x", '"_x', { desc = "Delete character without yanking" })
+vim.keymap.set("v", "d", '"_d', { desc = "Delete selection without yanking" })
+vim.keymap.set("v", "x", '"_x', { desc = "Delete character without yanking" })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
