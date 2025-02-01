@@ -27,6 +27,12 @@ vim.keymap.set("n", "x", '"_x', { desc = "Delete character without yanking" })
 vim.keymap.set("v", "d", '"_d', { desc = "Delete selection without yanking" })
 vim.keymap.set("v", "x", '"_x', { desc = "Delete character without yanking" })
 
+-- Spell check
+vim.keymap.set("n", "<leader>spt", "<cmd>set spell!<CR>", { desc = "Toggle spell check" })
+vim.keymap.set("n", "<leader>spa", "z=", { desc = "Suggest correctly spelled words" })
+vim.keymap.set("n", "<leader>spc", "zg", { desc = "Mark word as correct" })
+vim.keymap.set("n", "<leader>spi", "zw", { desc = "Mark word as incorrect" })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')

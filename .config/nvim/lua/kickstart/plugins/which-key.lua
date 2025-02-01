@@ -26,6 +26,7 @@ return {
         { "<leader>d", group = "[D]ocument" },
         { "<leader>r", group = "[R]ename" },
         { "<leader>s", group = "[S]earch" },
+        { "<leader>sp", group = "[Sp]ell check" },
         { "<leader>w", group = "[W]orkspace" },
       })
     end,
