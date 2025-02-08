@@ -70,4 +70,24 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Copied from https://www.reddit.com/r/neovim/comments/1fwqc8t/how_to_enable_spell_check_for_only_specific_files/
+-- Filetypes to enable spellcheck
+local spell_types = { "text", "plaintex", "typst", "gitcommit", "markdown" }
+
+-- Set global spell option to false initially to disable it for all file types
+vim.opt.spell = false
+
+-- Create an augroup for spellcheck to group related autocommands
+vim.api.nvim_create_augroup("Spellcheck", { clear = true })
+
+-- Create an autocommand to enable spellcheck for specified file types
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = "Spellcheck",
+  pattern = spell_types,
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+  desc = "Enable spellcheck for defined filetypes",
+})
+
 -- vim: ts=2 sts=2 sw=2 et
