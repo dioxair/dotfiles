@@ -21,11 +21,11 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 vim.keymap.set("n", "<leader>t", "<cmd>FloatermToggle<CR>", { desc = "Toggle vim-floaterm" })
 
--- I almost never want to yank text that I'm deleting, so this fixes that
-vim.keymap.set("n", "d", '"_d', { desc = "Delete without yanking" })
-vim.keymap.set("n", "x", '"_x', { desc = "Delete character without yanking" })
-vim.keymap.set("v", "d", '"_d', { desc = "Delete selection without yanking" })
-vim.keymap.set("v", "x", '"_x', { desc = "Delete character without yanking" })
+-- Key combos so I can delete text without yanking
+vim.keymap.set("n", "D", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set("n", "X", '"_x', { desc = "Delete character without yanking" })
+vim.keymap.set("v", "D", '"_d', { desc = "Delete selection without yanking" })
+vim.keymap.set("v", "X", '"_x', { desc = "Delete character without yanking" })
 
 -- Spell check
 vim.keymap.set("n", "<leader>spt", "<cmd>set spell!<CR>", { desc = "Toggle spell check" })
