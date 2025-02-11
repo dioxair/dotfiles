@@ -11,4 +11,7 @@ ls.add_snippets("markdown", {
       "| Data 4   | Data 5   | Data 6   |",
     }),
   }),
+  s("dropdown", {
+    t({ "<details>", "<summary>Here's a dropdown</summary>", "", "Dropdown text here", "</details>" }),
+  }),
 })
