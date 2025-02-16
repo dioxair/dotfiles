@@ -6,6 +6,9 @@ return {
   -- Wakatime code time tracking
   { "wakatime/vim-wakatime" },
 
+  -- Shows function you're currently in on top line
+  { "nvim-treesitter/nvim-treesitter-context" },
+
   -- Icons
   { "nvim-tree/nvim-web-devicons" },
 
