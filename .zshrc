@@ -114,6 +114,9 @@ alias ls="eza -la"
 alias cat="bat"
 alias zsh-reload="source ~/.zshrc"
 alias tmux-reload="tmux source ~/.config/tmux/tmux.conf"
+
+alias clip-wl='(){ wl-copy < $1 ;}'
+
 ##############################################################
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
