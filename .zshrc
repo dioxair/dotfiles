@@ -114,6 +114,7 @@ alias ls="eza -la"
 alias cat="bat"
 alias zsh-reload="source ~/.zshrc"
 alias tmux-reload="tmux source ~/.config/tmux/tmux.conf"
+alias sys-maintenance="./.config/scripts/sysmaintenance.sh"
 
 alias clip-wl='(){ wl-copy < $1 ;}'
 
