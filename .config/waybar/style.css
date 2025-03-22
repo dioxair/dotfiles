@@ -173,6 +173,10 @@ label:focus {
   min-width: 100px;
 }
 
+#mpd {
+  color: #66cc99;
+}
+
 #custom-media.custom-spotify {
   color: #66cc99;
 }

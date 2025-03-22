@@ -1,1 +1,8 @@
 Pictures/Screenshots
+.config/ncmpcpp/error.log
+.config/mpd/database
+.config/mpd/pid
+.config/mpd/state
+.config/mpd/mpd.log
+.config/mpd/sticker.sql
+.config/mpd/playlists

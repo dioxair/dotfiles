@@ -1,4 +1,4 @@
-# Based onMr. Cejas's blog, with some minor adjustments for displaying: https://fernandocejas.com/blog/engineering/2022-03-30-arch-linux-system-maintance/
+# Based on Mr. Cejas's blog, with some minor adjustments for displaying: https://fernandocejas.com/blog/engineering/2022-03-30-arch-linux-system-maintance/
 YELLOW="\033[1;33m"
 GREEN="\033[0;32m"
 NC="\033[0m" # No Color
