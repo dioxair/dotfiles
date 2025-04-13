@@ -19,7 +19,8 @@
     "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     "format-disconnected": "MPD disconnected",
     "format-stopped": "MPD stoped",
-    "interval": 2,
+    "interval": 1,
+    "on-click": "playerctl play-pause",
     "consume-icons": {
       "on": " " // Icon shows only when "consume" is on
     },
