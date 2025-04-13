@@ -34,7 +34,7 @@ sudo pacman -S stow
 First, install the programs configured in these dotfiles
 
 ```bash
-sudo pacman -S install neovim tmux zsh eza bat hyprland hyprshot dunst cliphist kitty dolphin wofi archlinux-xdg-menu xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent qt5ct grim slurp libnotify notify-osd python-gobject mpd mpc mpd-mpris ncmpcpp ffmpeg pacman-contrib
+sudo pacman -S neovim tmux zsh eza bat hyprland hyprshot dunst cliphist kitty dolphin wofi archlinux-xdg-menu xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent qt5ct grim slurp libnotify notify-osd python-gobject mpd mpc mpd-mpris ncmpcpp ffmpeg pacman-contrib
 # Fonts and icons
 sudo pacman -S $(pacman -Ssq noto-fons)
 sudo pacman -S ttf-hack kvantum breeze-icons breeze
