@@ -1,4 +1,4 @@
-![2024-11-20-200409_hyprshot](https://github.com/user-attachments/assets/1afbffe2-c006-440b-a362-a5b8e7f84de8)
+![2025-04-13-145804_hyprshot](https://github.com/user-attachments/assets/90f0ee19-492d-4e64-9d0e-dee569b62e99)
 
 # dotfiles
 
