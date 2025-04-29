@@ -86,27 +86,12 @@ function add-ssh-sam() {
   ssh-add ~/.ssh/dioxair_github_ssh_key_pavilion
 }
 
-##############################################################
-#                           Aliases!
-##############################################################
-alias goto-eclipse=/run/media/$USER/ECLIPSE/
-function mount-eclipse() {
-  # Check if mount point directory exists. If not, create it.
-  [ ! -d "/run/media" ] && sudo mkdir "/run/media" 
-  [ ! -d "/run/media/$USER" ] && sudo mkdir "/run/media/$USER" 
-  [ ! -d "/run/media/$USER/ECLIPSE" ] && sudo mkdir "/run/media/$USER/ECLIPSE/" && echo "Mount point setup!" 
-  sudo mount -o user,umask=000,utf8,noauto -L ECLIPSE /run/media/$USER/ECLIPSE/ # Actually mounts the USB.
-  if [ $? -eq 0 ]; then
-    echo "Mounted ECLIPSE!"
-  fi # If the mount is successfull (error code 0), display "Mounted ECLIPSE!" in the terminal.
-}
-
-
-function list_jobs {
+# Background job stuff
+function list-jobs {
   jobs -l
 }
 
-function kill_job {
+function kill-job {
   if [[ -z "$1" ]]; then
     echo "Usage: kill_job <job_number_or_pid>"
     return 1
@@ -123,7 +108,7 @@ function kill_job {
   fi
 }
 
-function kill_all_jobs {
+function kill-all-jobs {
   local job_ids=($(jobs -p))
   if [[ ${#job_ids[@]} -eq 0 ]]; then
     echo "No background jobs to kill."
@@ -134,6 +119,43 @@ function kill_all_jobs {
   kill "${job_ids[@]}"
 }
 
+function timer-notify {
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: timer_notify <seconds> [message]"
+    echo "Starts a timer in the background for <seconds> seconds."
+    echo "Sends a desktop notification and plays a sound when time is up."
+    echo "Optional [message] will be shown as: 'Alarm: [message]'"
+    return 0
+  fi
+
+  if [[ -z "$1" ]]; then
+    echo "Error: You must provide a number of seconds."
+    echo "Try 'timer_notify --help' for usage."
+    return 1
+  fi
+
+  local seconds="$1"
+  shift
+  local message="Alarm: ${*:-Time is up!}"
+
+  (sleep "$seconds" && notify-send "$message" && paplay /usr/share/sounds/freedesktop/stereo/complete.oga) & disown
+}
+
+
+##############################################################
+#                           Aliases!
+##############################################################
+alias goto-eclipse=/run/media/$USER/ECLIPSE/
+function mount-eclipse() {
+  # Check if mount point directory exists. If not, create it.
+  [ ! -d "/run/media" ] && sudo mkdir "/run/media" 
+  [ ! -d "/run/media/$USER" ] && sudo mkdir "/run/media/$USER" 
+  [ ! -d "/run/media/$USER/ECLIPSE" ] && sudo mkdir "/run/media/$USER/ECLIPSE/" && echo "Mount point setup!" 
+  sudo mount -o user,umask=000,utf8,noauto -L ECLIPSE /run/media/$USER/ECLIPSE/ # Actually mounts the USB.
+  if [ $? -eq 0 ]; then
+    echo "Mounted ECLIPSE!"
+  fi # If the mount is successfull (error code 0), display "Mounted ECLIPSE!" in the terminal.
+}
 
 # Rust
 alias cb="cargo build"
