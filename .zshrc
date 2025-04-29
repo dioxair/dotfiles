@@ -101,6 +101,40 @@ function mount-eclipse() {
   fi # If the mount is successfull (error code 0), display "Mounted ECLIPSE!" in the terminal.
 }
 
+
+function list_jobs {
+  jobs -l
+}
+
+function kill_job {
+  if [[ -z "$1" ]]; then
+    echo "Usage: kill_job <job_number_or_pid>"
+    return 1
+  fi
+
+  if [[ "$1" =~ '^[0-9]+$' ]]; then
+    if jobs -l | grep -q "^\[$1\]"; then
+      kill %$1 && echo "Killed job %$1"
+    else
+      kill "$1" && echo "Killed PID $1"
+    fi
+  else
+    echo "Invalid job number or PID: $1"
+  fi
+}
+
+function kill_all_jobs {
+  local job_ids=($(jobs -p))
+  if [[ ${#job_ids[@]} -eq 0 ]]; then
+    echo "No background jobs to kill."
+    return 0
+  fi
+
+  echo "Killing all background jobs..."
+  kill "${job_ids[@]}"
+}
+
+
 # Rust
 alias cb="cargo build"
 alias cbr="cargo build --release"
@@ -109,12 +143,16 @@ alias cs="cargo search"
 alias crr="cargo run --release"
 # Misc. aliases
 alias cls="clear"
-alias killalljobs="kill ${${(v)jobstates##*:*:}%=*}"
 alias ls="eza -la"
 alias cat="bat"
 alias zsh-reload="source ~/.zshrc"
 alias tmux-reload="tmux source ~/.config/tmux/tmux.conf"
 alias sys-maintenance="./.config/scripts/sysmaintenance.sh"
+
+alias enable-mpd-discord-rpc="systemctl --user enable --now mpd-discord-rpc "
+alias enable-mpd-mpris="systemctl --user --now enable mpd-mpris"
+alias disable-mpd-discord-rpc="systemctl --user disable --now mpd-discord-rpc"
+alias disable-mpd-mpris="systemctl --user disable --now mpd-mpris"
 
 alias clip-wl='(){ wl-copy < $1 ;}'
 
