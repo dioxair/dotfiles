@@ -1,0 +1,5 @@
+chmod +x ~/.config/scripts/timer-notify/timer-notify
+sudo ln -s ~/.config/scripts/timer-notify/timer-notify /usr/local/bin/
+mkdir -p ~/.config/systemd/user/
+cp ~/.config/scripts/timer-notify/timer-notify@.service ~/.config/systemd/user/
+systemctl --user daemon-reload

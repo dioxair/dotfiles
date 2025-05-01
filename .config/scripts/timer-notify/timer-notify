@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+TIMER_DIR="$HOME/.config/timer-notify"
+mkdir -p "$TIMER_DIR"
+
+help() {
+  cat <<EOF
+Usage: timer-notify [seconds] [message]  Set timer with notification
+       timer-notify --cancel [ID]       Cancel specific timer
+       timer-notify --list              List active timers
+
+Systemd-based timer notifications that work across sessions and reboots.
+EOF
+}
+
+set-timer() {
+  local seconds=$1
+  local message="${*:2}"
+  local id=$(date +%s%N | sha1sum | cut -c1-8)
+  local sanitized_id="timer-${id}"
+
+  systemd-run --user \
+    --unit="${sanitized_id}" \
+    --on-active="+${seconds}seconds" \
+    --description="Timer: $message" \
+    --timer-property=AccuracySec=1us \
+    systemctl --user start "timer-notify@${id}.service"
+
+  echo "${id}:${message}" >> "$TIMER_DIR/active-timers"
+  echo "Timer set for $seconds seconds (ID: $id)"
+}
+
+list-timers() {
+  echo "Active timers:"
+  while IFS=: read -r id message; do
+    local status=$(systemctl --user show "timer-${id}.timer" -p ActiveState --value)
+    if [[ "$status" == "active" ]]; then
+      local trigger=$(systemctl --user list-timers "timer-${id}.timer" --no-legend | \
+        awk '{print $5 " " $6 " " $7}')
+      echo "ID: $id | Message: $message | Triggers: $trigger"
+    else
+      sed -i "/^$id:/d" "$TIMER_DIR/active-timers"
+    fi
+  done < "$TIMER_DIR/active-timers" 2>/dev/null || echo "No active timers"
+}
+
+cancel-timer() {
+  local id=$1
+  local unit="timer-${id}.timer"
+
+  if grep -q "^$id:" "$TIMER_DIR/active-timers"; then
+    # systemctl whines about the unit not being loaded, but the
+    # timer still stops so its whatever i guess i just silence it here
+    # (yes i know this is bad practice)
+    systemctl --user stop "$unit"         2>/dev/null || true
+    systemctl --user disable "$unit"      2>/dev/null || true
+    systemctl --user reset-failed "$unit" 2>/dev/null || true
+
+    sed -i "/^$id:/d" "$TIMER_DIR/active-timers"
+    echo "Canceled timer $id"
+  else
+    echo "Timer $id not found"
+  fi
+}
+
+case $1 in
+  -h|--help)    help ;;
+  --list)       list-timers ;;
+  --cancel)     cancel-timer "$2" ;;
+  [0-9]*)       set-timer "$@" ;;
+  *)            help; exit 1 ;;
+esac

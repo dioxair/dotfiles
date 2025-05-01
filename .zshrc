@@ -119,57 +119,6 @@ function kill-all-jobs {
   kill "${job_ids[@]}"
 }
 
-function timer-notify() {
-  local pid_file=~/.timer-notify.pid
-
-  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "Usage: timer-notify [seconds] [message] - Set a timer with notification"
-    echo "timer-notify --cancel - Cancel active timer"
-    echo "Set a background timer for [seconds] that shows a notification with [message]"
-    echo "and plays a sound when complete. Cancel with --cancel."
-    return 0
-  fi
-
-  if [[ "$1" == "--cancel" ]]; then
-    if [[ -f "$pid_file" ]]; then
-      local pid=$(cat "$pid_file")
-      if kill "$pid" 2>/dev/null; then
-        echo "Canceled timer"
-        rm -f "$pid_file"
-      else
-        echo "No active timer to cancel"
-        rm -f "$pid_file"
-      fi
-    else
-      echo "No active timer found"
-    fi
-    return 0
-  fi
-
-  if ! [[ "$1" =~ ^[0-9]+$ ]]; then
-    echo "Error: First argument must be a positive integer (seconds)"
-    return 1
-  fi
-
-  if [[ -z "$2" ]]; then
-    echo "Error: Please provide a notification message"
-    return 1
-  fi
-
-  (
-    trap 'rm -f "$pid_file"' EXIT
-    sleep $1
-    notify-send "Timer Complete" "$2"
-    paplay /usr/share/sounds/freedesktop/stereo/complete.oga
-  ) & 
-
-  local pid=$!
-  echo $pid > "$pid_file"
-  disown
-
-  echo "Timer set for $1 seconds! (PID: $pid)"
-}
-
 ##############################################################
 #                           Aliases!
 ##############################################################
