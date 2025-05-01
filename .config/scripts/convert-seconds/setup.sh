@@ -1,2 +1,2 @@
-chmod +x ~/.config/scripts/convert-seconds/convert-seconds.sh
-sudo ln -s ~/.config/scripts/convert-seconds/convert-seconds.sh /usr/local/bin/
+chmod +x ~/.config/scripts/convert-seconds/convert-seconds
+sudo ln -s ~/.config/scripts/convert-seconds/convert-seconds /usr/local/bin/
