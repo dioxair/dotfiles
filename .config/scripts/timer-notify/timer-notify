@@ -8,6 +8,8 @@ help() {
 Usage: timer-notify [seconds] [message]  Set timer with notification
        timer-notify --cancel [ID]       Cancel specific timer
        timer-notify --list              List active timers
+       timer-notify --pause [ID]         Pause specific timer
+       timer-notify --resume [ID]        Resume a paused timer
 
 Systemd-based timer notifications that work across sessions and reboots.
 EOF
@@ -15,33 +17,123 @@ EOF
 
 set-timer() {
   local seconds=$1
-  local message="${*:2}"
+  shift
+  local message="$*"
   local id=$(date +%s%N | sha1sum | cut -c1-8)
-  local sanitized_id="timer-${id}"
+  local sanitized="timer-${id}"
+  local now=$(date +%s)
+  local end_ts=$((now + seconds))
 
   systemd-run --user \
-    --unit="${sanitized_id}" \
+    --unit="$sanitized" \
     --on-active="+${seconds}seconds" \
     --description="Timer: $message" \
     --timer-property=AccuracySec=1us \
     systemctl --user start "timer-notify@${id}.service"
 
-  echo "${id}:${message}" >> "$TIMER_DIR/active-timers"
+  printf "%s:%s:%s:%s\n" "$id" "${message//:/\\:}" "$seconds" "$end_ts" \
+    >> "$TIMER_DIR/active-timers"
+
   echo "Timer set for $seconds seconds (ID: $id)"
 }
 
 list-timers() {
+  local now=$(date +%s)
+
+  # Active timers
   echo "Active timers:"
-  while IFS=: read -r id message; do
-    local status=$(systemctl --user show "timer-${id}.timer" -p ActiveState --value)
-    if [[ "$status" == "active" ]]; then
-      local trigger=$(systemctl --user list-timers "timer-${id}.timer" --no-legend | \
-        awk '{print $5 " " $6 " " $7}')
-      echo "ID: $id | Message: $message | Triggers: $trigger"
-    else
-      sed -i "/^$id:/d" "$TIMER_DIR/active-timers"
-    fi
-  done < "$TIMER_DIR/active-timers" 2>/dev/null || echo "No active timers"
+  if [[ -s "$TIMER_DIR/active-timers" ]]; then
+    while IFS=: read -r id rawmsg dur end_ts; do
+      local message=${rawmsg//\\:/\:}
+      if (( end_ts > now )); then
+        local rem=$((end_ts - now))
+        printf "  ID: %s | Message: %s | Remaining: %ds\n" \
+          "$id" "$message" "$rem"
+      else
+        # expired behind the scenes, remove it
+        sed -i "/^${id}:/d" "$TIMER_DIR/active-timers"
+      fi
+    done < "$TIMER_DIR/active-timers"
+  else
+    echo "  (none)"
+  fi
+
+  echo
+  # Paused timers
+  echo "Paused timers:"
+  if [[ -s "$TIMER_DIR/paused-timers" ]]; then
+    while IFS=: read -r id remaining rawmsg; do
+      local message=${rawmsg//\\:/\:}
+      printf "  ID: %s | Message: %s | Paused with %ds remaining\n" \
+        "$id" "$message" "$remaining"
+    done < "$TIMER_DIR/paused-timers"
+  else
+    echo "  (none)"
+  fi
+}
+
+pause-timer() {
+  local id=$1
+  local line
+  line=$(grep "^${id}:" "$TIMER_DIR/active-timers") || {
+    echo "Timer $id not found or already paused"
+    return 1
+  }
+
+  IFS=: read -r _ rawmsg dur end_ts <<< "$line"
+  local message=${rawmsg//\\:/\:}
+  local now=$(date +%s)
+  local remaining=$((end_ts - now))
+
+  if (( remaining <= 0 )); then
+    echo "Timer $id already expired"
+    # clean up stale entry
+    sed -i "/^${id}:/d" "$TIMER_DIR/active-timers"
+    return 1
+  fi
+
+  # stop the timer unit
+  systemctl --user stop "timer-${id}.timer"
+
+  # remove from active and append to paused
+  sed -i "/^${id}:/d" "$TIMER_DIR/active-timers"
+  printf "%s:%s:%s\n" "$id" "$remaining" "$message" \
+    >> "$TIMER_DIR/paused-timers"
+
+  echo "Paused timer $id ($remaining seconds left)"
+}
+
+resume-timer() {
+  local id=$1
+  local line
+  line=$(grep "^${id}:" "$TIMER_DIR/paused-timers") || {
+    echo "Timer $id not found in paused timers"
+    return 1
+  }
+
+  IFS=: read -r _ remaining rawmsg <<< "$line"
+  local message=${rawmsg//\\:/\:}
+
+  # remove from paused
+  sed -i "/^${id}:/d" "$TIMER_DIR/paused-timers"
+
+  # compute new end timestamp
+  local now=$(date +%s)
+  local new_end=$((now + remaining))
+
+  # re-run the transient timer
+  systemd-run --user \
+    --unit="timer-${id}" \
+    --on-active="+${remaining}seconds" \
+    --description="Timer: $message" \
+    --timer-property=AccuracySec=1us \
+    systemctl --user start "timer-notify@${id}.service"
+
+  # back into active, with updated timestamps
+  printf "%s:%s:%s:%s\n" "$id" "${message//:/\\:}" "$remaining" "$new_end" \
+    >> "$TIMER_DIR/active-timers"
+
+  echo "Resumed timer $id ($remaining seconds left)"
 }
 
 cancel-timer() {
@@ -67,6 +159,8 @@ case $1 in
   -h|--help)    help ;;
   --list)       list-timers ;;
   --cancel)     cancel-timer "$2" ;;
+  --pause)      pause-timer "$2" ;;
+  --resume)     resume-timer "$2" ;;
   [0-9]*)       set-timer "$@" ;;
   *)            help; exit 1 ;;
 esac

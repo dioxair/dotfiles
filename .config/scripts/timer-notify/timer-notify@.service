@@ -6,7 +6,9 @@ Type=oneshot
 Environment=DISPLAY=:0
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
 ExecStart=/usr/bin/sh -c '\
-  msg=$(grep "^%i:" "$HOME/.config/timer-notify/active-timers" | cut -d: -f2-); \
-  /usr/bin/notify-send "Timer Complete" "$msg" && \
+  msg=$(awk -F: -v id="%i" '\''$1 == id { print $2 }'\'' \
+    "$HOME/.config/timer-notify/active-timers"); \
+  msg=${msg//\\:/\:}; \
+  /usr/bin/notify-send "Timer Complete" "$msg"; \
   /usr/bin/paplay "$HOME/.config/scripts/timer-notify/mob.elderguardian.curse.wav"\
 '
