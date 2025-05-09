@@ -21,6 +21,7 @@ return {
         css = { "prettier" },
         json = { "prettier" },
         rust = { "rustfmt" },
+        python = { "black" },
       },
     },
   },
