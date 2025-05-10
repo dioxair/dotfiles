@@ -169,7 +169,7 @@ label:focus {
 }
 
 #custom-media {
-  color: #2a5c45;
+  color: #ffedf3;
   min-width: 100px;
 }
 
@@ -178,11 +178,19 @@ label:focus {
 }
 
 #custom-media.custom-spotify {
-  color: #66cc99;
+  color: #1db954;
+}
+
+#custom-media.custom-mpd {
+  color: #1e90ff;
 }
 
 #custom-media.custom-vlc {
   color: #ffa000;
+}
+
+#custom-media.custom-haruna {
+  color: #f54c62;
 }
 
 #temperature {

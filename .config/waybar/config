@@ -5,22 +5,22 @@
   // "width": 1920, // Waybar width
   // Choose the order of the modules
   "modules-left": ["tray", "hyprland/workspaces", "pulseaudio"],
-  "modules-center": ["mpd"],
+  "modules-center": ["custom/media"],
   "modules-right": ["network", "battery", "backlight", "clock"],
   // Modules configuration
   "custom/media": {
-    "exec": "/usr/bin/python3 $HOME/.local/bin/mediaplayer.py --player spotify",
+    "exec": "/usr/bin/python3 $HOME/.local/bin/mediaplayer.py",
     "return-type": "json",
-    "max-length": 60,
+    "max-length": 250,
     "on-click": "playerctl play-pause",
     "escape": "true",
   },
   "mpd": {
     "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-    "format-disconnected": "MPD disconnected",
-    "format-stopped": "MPD stoped",
+    "format-disconnected": "",
+    "format-stopped": "",
     "interval": 1,
-    "on-click": "playerctl play-pause",
+    "on-click": "playerctl -p mpd play-pause",
     "consume-icons": {
       "on": " " // Icon shows only when "consume" is on
     },
