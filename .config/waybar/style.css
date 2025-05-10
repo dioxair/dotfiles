@@ -182,7 +182,15 @@ label:focus {
 }
 
 #custom-media.custom-mpd {
-  color: #1e90ff;
+  color: #7f8283;
+}
+
+#custom-media.custom-firefox {
+  color: #ffbd4f;
+}
+
+#custom-media.custom-chromium {
+  color: #4285f4;
 }
 
 #custom-media.custom-vlc {

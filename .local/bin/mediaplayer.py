@@ -129,7 +129,7 @@ class PlayerManager:
             and ":ad:" in player.props.metadata["mpris:trackid"]
         ):
             track_info = "Advertisement"
-        elif artist is not None and title is not None:
+        elif artist != "" and title != "":
             track_info = f"{artist} - {title}"
         else:
             track_info = title
