@@ -66,7 +66,7 @@ stow . --adopt && git restore .
 
 [bg4.png](https://wallhaven.cc/w/d6prd3) made by [Silriti](https://wallhaven.cc/user/Silriti)
 
-[bg5.png's poster](https://raw.githubusercontent.com/dioxair/dotfiles/refs/heads/master/Pictures/bg5.png) made by [u/Laserplanet2](https://www.reddit.com/user/Laserplanet2/), wallpaper edit made by me
+[bg5.png's poster](https://www.reddit.com/r/evangelion/comments/w5er5t/unit_00_%E7%B6%BE%E6%B3%A2_%E3%83%AC%E3%82%A4_rei_digital_poster_me/) made by [u/Laserplanet2](https://www.reddit.com/user/Laserplanet2/), wallpaper edit made by me
 
 [bg6.png](https://wallhaven.cc/w/5g6mj3) made by [Jean-Marc Denis](https://jmd.im/)
 
