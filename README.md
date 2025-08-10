@@ -1,4 +1,5 @@
-![2025-04-13-145804_hyprshot](https://github.com/user-attachments/assets/90f0ee19-492d-4e64-9d0e-dee569b62e99)
+<img width="1366" height="768" alt="2025-08-10-125721_hyprshot" src="https://github.com/user-attachments/assets/b361c0c8-a638-4806-9130-b19f9b1a37bb" />
+
 
 # dotfiles
 
@@ -65,7 +66,7 @@ stow . --adopt && git restore .
 
 [bg4.png](https://wallhaven.cc/w/d6prd3) made by [Silriti](https://wallhaven.cc/user/Silriti)
 
-[bg5.png's poster] made by [u/Laserplanet2](https://www.reddit.com/user/Laserplanet2/), wallpaper edit made by me
+[bg5.png's poster](https://raw.githubusercontent.com/dioxair/dotfiles/refs/heads/master/Pictures/bg5.png) made by [u/Laserplanet2](https://www.reddit.com/user/Laserplanet2/), wallpaper edit made by me
 
 [bg6.png](https://wallhaven.cc/w/5g6mj3) made by [Jean-Marc Denis](https://jmd.im/)
 
