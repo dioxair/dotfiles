@@ -63,4 +63,10 @@ stow . --adopt && git restore .
 
 [bg2.jpg](https://www.pixiv.net/en/artworks/118647339) and [bg3.jpg](https://www.pixiv.net/en/artworks/99144899) made by [縹 京介（ALPCMAS）](https://www.pixiv.net/en/users/2351667)
 
+[bg4.png](https://wallhaven.cc/w/d6prd3) made by [Silriti](https://wallhaven.cc/user/Silriti)
+
+[bg5.png's poster] made by [u/Laserplanet2](https://www.reddit.com/user/Laserplanet2/), wallpaper edit made by me
+
+[bg6.png](https://wallhaven.cc/w/5g6mj3) made by [Jean-Marc Denis](https://jmd.im/)
+
 [github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
