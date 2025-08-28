@@ -70,4 +70,6 @@ stow . --adopt && git restore .
 
 [bg6.png](https://wallhaven.cc/w/5g6mj3) made by [Jean-Marc Denis](https://jmd.im/)
 
+[bg7.png](https://commons.wikimedia.org/wiki/File:Black_Hole_Side.png) made by [852278-MCS](https://commons.wikimedia.org/wiki/User:852278-MCS)
+
 [github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
