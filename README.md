@@ -1,5 +1,4 @@
-<img width="1366" height="768" alt="2025-08-10-125721_hyprshot" src="https://github.com/user-attachments/assets/b361c0c8-a638-4806-9130-b19f9b1a37bb" />
-
+<img width="1920" height="1080" alt="2025-08-27-211802_hyprshot" src="https://github.com/user-attachments/assets/1ff76d8d-3c4b-4698-a516-a79844c824e4" />
 
 # dotfiles
 
