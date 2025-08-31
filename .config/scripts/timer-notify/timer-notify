@@ -5,20 +5,64 @@ mkdir -p "$TIMER_DIR"
 
 help() {
   cat <<EOF
-Usage: timer-notify [seconds] [message]  Set timer with notification
-       timer-notify --cancel [ID]       Cancel specific timer
-       timer-notify --list              List active timers
-       timer-notify --pause [ID]         Pause specific timer
-       timer-notify --resume [ID]        Resume a paused timer
+Usage: timer-notify [duration] [unit] [message]  Set timer with notification
+       timer-notify --cancel [ID]               Cancel a specific timer
+       timer-notify --list                      List active timers
+       timer-notify --pause [ID]                 Pause a specific timer
+       timer-notify --resume [ID]                Resume a paused timer
 
 Systemd-based timer notifications that work across sessions and reboots.
+
+Time units can be specified (ex. "30 minutes", "2 hours", "1 day").
+If no unit is given, the duration is treated as seconds.
+
+Units: s|sec|second(s), m|min|minute(s), h|hr|hour(s), d|day(s)
+Example: timer-notify 30 minutes "study time over\!"
+
+Made by Dioxair
 EOF
 }
 
 set-timer() {
-  local seconds=$1
-  shift
-  local message="$*"
+  local value=$1
+  local unit=$2
+  local seconds
+  local message
+
+  case "$unit" in
+    s|sec|secs|second|seconds)
+      seconds=$value
+      shift 2
+      ;;
+    m|min|mins|minute|minutes)
+      seconds=$((value * 60))
+      shift 2
+      ;;
+    h|hr|hrs|hour|hours)
+      seconds=$((value * 3600))
+      shift 2
+      ;;
+    d|day|days)
+      seconds=$((value * 86400))
+      shift 2
+      ;;
+    *)
+      seconds=$value
+      shift 1
+      ;;
+  esac
+
+  message="$*"
+
+  if ! [[ "$seconds" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: Invalid or zero duration specified." >&2
+    exit 1
+  fi
+  if [[ -z "$message" ]]; then
+    echo "Error: A message is required." >&2
+    exit 1
+  fi
+
   local id=$(date +%s%N | sha1sum | cut -c1-8)
   local sanitized="timer-${id}"
   local now=$(date +%s)
