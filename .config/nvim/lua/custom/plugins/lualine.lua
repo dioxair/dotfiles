@@ -4,12 +4,20 @@ return {
     "nvim-lualine/lualine.nvim",
     lazy = false,
     config = function()
+      local custom_codedark = require("lualine.themes.codedark")
+
+      custom_codedark.normal.c.bg = "#0f0f0f"
+      custom_codedark.insert.c.bg = "#0f0f0f"
+      custom_codedark.inactive.b.bg = "#0f0f0f"
+      custom_codedark.visual.b.bg = "#0f0f0f"
+      custom_codedark.replace.c.bg = "#0f0f0f"
+
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = "vscode",
+          theme = custom_codedark,
           component_separators = "",
-          section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           disabled_filetypes = {
             statusline = {},
             winbar = {},
