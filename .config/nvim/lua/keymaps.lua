@@ -33,6 +33,9 @@ vim.keymap.set("n", "<leader>spa", "z=", { desc = "Suggest correctly spelled wor
 vim.keymap.set("n", "<leader>spc", "zg", { desc = "Mark word as correct" })
 vim.keymap.set("n", "<leader>spi", "zw", { desc = "Mark word as incorrect" })
 
+-- Shorthand for selecting all non whitespace content of a line
+vim.keymap.set("n", "vv", "^v$", { noremap = true, silent = true })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
