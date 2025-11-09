@@ -6,7 +6,7 @@
   // Choose the order of the modules
   "modules-left": ["tray", "hyprland/workspaces", "pulseaudio"],
   "modules-center": ["custom/media"],
-  "modules-right": ["network", "battery", "backlight", "clock"],
+  "modules-right": ["network", "custom/headphone-battery", "battery", "backlight", "clock"],
   // Modules configuration
   "custom/media": {
     "exec": "/usr/bin/python3 $HOME/.local/bin/mediaplayer.py",
@@ -109,8 +109,14 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
-    "format-full": "󰂄  {capacity}%",
+    "format-full": "  {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "]
+  },
+  "custom/headphone-battery": {
+    "format": "{}",
+    "interval": 3,
+    "exec": "~/.config/waybar/scripts/get-headphone-battery.sh",
+    "return-type": "json",
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
