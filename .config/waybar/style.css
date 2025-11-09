@@ -136,6 +136,23 @@ button:hover {
   animation-direction: alternate;
 }
 
+#custom-headphone-battery {
+  color: white;
+}
+
+#custom-headphone-battery.full {
+  color: #61f547;
+}
+
+#custom-headphone-battery.critical {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 label:focus {
   color: #000000;
 }
