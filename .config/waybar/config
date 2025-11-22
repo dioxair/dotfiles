@@ -109,8 +109,8 @@
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
-    "format-full": "  {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-full": "󰌢    {capacity}%",
+    "format-icons": ["󰌢   ", "󰌢   ", "󰌢   ", "󰌢   ", "󰌢   "]
   },
   "custom/headphone-battery": {
     "format": "{}",
