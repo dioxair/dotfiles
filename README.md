@@ -71,4 +71,20 @@ stow . --adopt && git restore .
 
 [bg7.png](https://commons.wikimedia.org/wiki/File:Black_Hole_Side.png) made by [852278-MCS](https://commons.wikimedia.org/wiki/User:852278-MCS)
 
-[github pfp.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
+[bg8.png](https://www.pixiv.net/en/artworks/131529266) made by [58 / fevercell](https://www.pixiv.net/en/users/54253226)
+
+[bg9.png](https://wallhaven.cc/w/o5jxjp) made by an unknown author
+
+[bg10.png](https://wallhaven.cc/w/49dxgd) made by an unknown author
+
+[bg11.png](https://wallhaven.cc/w/g7vzk7) made by an unknown author
+
+[bg12.png](https://wallhaven.cc/w/d6dgo3) made by an unknown author
+
+[bg13.png](https://x.com/syego/status/1663884065957900288) made by [syego](https://x.com/syego)
+
+[bg14.png](https://www.deviantart.com/i5yal/art/EXVO-wallpaper-833916256) made by [i5yal](https://www.deviantart.com/i5yal)
+
+[misc-pfp](https://www.instagram.com/p/C_C9zK4M-9_/), [misc-pfp-2](https://www.instagram.com/p/DEsyUg3IEu3/), and [github-pfp-2](https://www.instagram.com/p/DAN6grmBM7v/) made by [alpinespirits](https://www.instagram.com/alpinespirits/)
+
+[github pfp-1.png](https://www.pixiv.net/en/artworks/113901165) and [another pfp.jpg](https://www.pixiv.net/en/artworks/113658699) made by [Rune Xiao](https://www.pixiv.net/en/users/44473246)
