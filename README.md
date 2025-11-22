@@ -38,7 +38,7 @@ sudo pacman -S neovim tmux zsh eza bat hyprland hyprshot dunst cliphist kitty do
 # Fonts and icons
 sudo pacman -S $(pacman -Ssq noto-fonts)
 sudo pacman -S ttf-hack kvantum breeze-icons breeze
-yay -S ttf-jetbrains-mono-nerd qt6ct-kde
+yay -S ttf-jetbrains-mono-nerd apple-fonts qt6ct-kde
 # Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && rm -rf ~/.oh-my-zsh
 ```
@@ -56,7 +56,7 @@ Then, use stow to create symlinks
 stow . --adopt && git restore .
 ```
 
-> **NOTE FOR NON-ARCH LINUX USERS**: I use JetBrainsMono Nerd Font for Kitty. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
+> **NOTE FOR NON-ARCH LINUX USERS**: I use JetBrainsMono Nerd Font for Kitty and Apple fonts for hyprlock. To install JetBrainsMono Nerd Font userwide, [download and extract](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip) the .zip file with all of the fonts to `~/.local/share/fonts` (you may have to create the directory)
 
 ## Image credits
 [bg1.jpg](https://www.pixiv.net/en/artworks/115001263) made by [furi / ふーり](https://www.pixiv.net/en/users/41736171)
